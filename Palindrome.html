@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    var word = prompt("Enter word to find palindrome","madam");
+var wordlower = word.toLowerCase();
+function reverseString(word) {
+    var newString = "";
+    for (var i = word.length - 1; i >= 0; i--) {
+        newString += wordlower[i];      
+    }
+    return newString;
+}
+var out = reverseString(word);
+if(out===wordlower){
+document.write(word +" is palindrome"+ "</br>");
+}else{
+    document.write(word +" is not palindrome" + "</br>");
+}
+
+var midString ="";
+var midd="";
+
+function CentralWord(word){
+    for (var i =0; i<=wordlower.length-1; i++) {
+        midString += wordlower.substring(i+1,word.length-1);  
+        break; 
+           
+    }
+    return midString;
+}
+var central = CentralWord(word);
+//document.write(" Central palind "+ central);
+
+function CentralRev(central){
+    for (var j = central.length-1; j >= 0; j--) {
+        midd += central[j] ; 
+        if(central === midd){
+    document.write(central+" in " + word +" is palindrome");
+    }
+    
+    }
+}
+
+CentralRev(central);
+    
+    
+    </script>
+</head>
+<body>
+</body>
+</html>
